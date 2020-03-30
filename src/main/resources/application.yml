@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: dev
+
+logging:
+  level:
+    root: info
+    com.zl: debug
+
+server:
+  port: 7777
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
