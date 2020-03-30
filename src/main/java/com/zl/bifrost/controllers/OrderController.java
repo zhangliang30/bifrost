@@ -18,7 +18,7 @@ import com.zl.bifrost.common.response.OrderQueryResponse;
 import com.zl.bifrost.services.OrderService;
 
 @Slf4j
-@RestController
+//@RestController
 public class OrderController {
     @Autowired
     private OrderService orderService;

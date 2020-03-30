@@ -3,8 +3,11 @@ package com.zl.bifrost.mysql.dao;
 import com.zl.bifrost.mysql.entity.UserOrder;
 import com.zl.bifrost.mysql.entity.UserOrderExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface UserOrderMapper {
     /**
      *

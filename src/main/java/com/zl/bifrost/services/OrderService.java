@@ -16,14 +16,16 @@ import com.zl.bifrost.mysql.entity.OrderItem;
 import com.zl.bifrost.mysql.entity.OrderItemExample;
 import com.zl.bifrost.mysql.entity.UserOrder;
 
+import javax.annotation.Resource;
+
 /**
  * Created by Vongola on 2019/3/3.
  */
 @Service
 public class OrderService {
-    @Autowired
+    @Resource
     private UserOrderMapper userOrderMapper;
-    @Autowired
+    @Resource
     private OrderItemMapper orderItemMapper;
 
     @Transactional
