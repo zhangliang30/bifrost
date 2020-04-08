@@ -19,4 +19,8 @@ public class JsonUtils {
             return null;
         }
     }
+
+    public static String obj2Json(Object o) {
+        return JSON.toJSONString(o);
+    }
 }

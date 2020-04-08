@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class LoginResponse<T> {
+public class StandardResponse<T> {
     private StatusMeta meta = new StatusMeta();
     private T data;
 }
