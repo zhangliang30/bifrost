@@ -14,4 +14,6 @@ public class UserAuthenticateData {
     private String email;
     private String token;
     private boolean status;
+    private String avatar;
+    private String openId;
 }

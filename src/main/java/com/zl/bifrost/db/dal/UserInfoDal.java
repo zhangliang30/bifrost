@@ -4,7 +4,7 @@ import com.zl.bifrost.common.response.user.UserListVO;
 import com.zl.bifrost.db.dao.UserInfoMapper;
 import com.zl.bifrost.db.entity.UserInfo;
 import com.zl.bifrost.db.entity.UserInfoExample;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.CollectionUtils;
 
@@ -15,6 +15,11 @@ import java.util.List;
 public class UserInfoDal {
     @Resource
     private UserInfoMapper mapper;
+
+    public UserInfo save(UserInfo userInfo) {
+        int count =  mapper.insert(userInfo);
+        return getByUsername(userInfo.getUsername());
+    }
 
     public List<UserInfo> queryUser(String query, int pageSize, int pageNum) {
         UserInfoExample example = new UserInfoExample();
@@ -43,7 +48,21 @@ public class UserInfoDal {
         return user.getId();
     }
 
+
+    public UserInfo getUserByOpenId(String openId) {
+        UserInfoExample example = new UserInfoExample();
+        example.createCriteria().andOpenIdEqualTo(openId);
+        List<UserInfo> users = mapper.selectByExample(example);
+        if (CollectionUtils.isEmpty(users)) {
+            return null;
+        }
+        return users.get(0);
+    }
+
     public UserInfo getUserByToken(String token) {
+        if (StringUtils.isEmpty(token)) {
+            return null;
+        }
         UserInfoExample example = new UserInfoExample();
         example.createCriteria().andTokenEqualTo(token);
         List<UserInfo> users = mapper.selectByExample(example);
