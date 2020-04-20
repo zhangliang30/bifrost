@@ -15,6 +15,12 @@ public class UserInfo implements Serializable {
 
     private String email;
 
+    private Integer status;
+
+    private String openId;
+
+    private String avatar;
+
     private static final long serialVersionUID = 1L;
 
     public Long getId() {
@@ -95,6 +101,45 @@ public class UserInfo implements Serializable {
         this.email = email;
     }
 
+    public Integer getStatus() {
+        return status;
+    }
+
+    public UserInfo withStatus(Integer status) {
+        this.setStatus(status);
+        return this;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public String getOpenId() {
+        return openId;
+    }
+
+    public UserInfo withOpenId(String openId) {
+        this.setOpenId(openId);
+        return this;
+    }
+
+    public void setOpenId(String openId) {
+        this.openId = openId;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public UserInfo withAvatar(String avatar) {
+        this.setAvatar(avatar);
+        return this;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -107,6 +152,9 @@ public class UserInfo implements Serializable {
         sb.append(", token=").append(token);
         sb.append(", mobile=").append(mobile);
         sb.append(", email=").append(email);
+        sb.append(", status=").append(status);
+        sb.append(", openId=").append(openId);
+        sb.append(", avatar=").append(avatar);
         sb.append("]");
         return sb.toString();
     }
@@ -128,7 +176,10 @@ public class UserInfo implements Serializable {
             && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
             && (this.getToken() == null ? other.getToken() == null : this.getToken().equals(other.getToken()))
             && (this.getMobile() == null ? other.getMobile() == null : this.getMobile().equals(other.getMobile()))
-            && (this.getEmail() == null ? other.getEmail() == null : this.getEmail().equals(other.getEmail()));
+            && (this.getEmail() == null ? other.getEmail() == null : this.getEmail().equals(other.getEmail()))
+            && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
+            && (this.getOpenId() == null ? other.getOpenId() == null : this.getOpenId().equals(other.getOpenId()))
+            && (this.getAvatar() == null ? other.getAvatar() == null : this.getAvatar().equals(other.getAvatar()));
     }
 
     @Override
@@ -141,6 +192,9 @@ public class UserInfo implements Serializable {
         result = prime * result + ((getToken() == null) ? 0 : getToken().hashCode());
         result = prime * result + ((getMobile() == null) ? 0 : getMobile().hashCode());
         result = prime * result + ((getEmail() == null) ? 0 : getEmail().hashCode());
+        result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        result = prime * result + ((getOpenId() == null) ? 0 : getOpenId().hashCode());
+        result = prime * result + ((getAvatar() == null) ? 0 : getAvatar().hashCode());
         return result;
     }
 }

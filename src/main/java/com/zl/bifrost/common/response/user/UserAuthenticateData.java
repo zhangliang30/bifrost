@@ -1,4 +1,4 @@
-package com.zl.bifrost.common.dto;
+package com.zl.bifrost.common.response.user;
 
 import lombok.Data;
 
@@ -13,4 +13,7 @@ public class UserAuthenticateData {
     private String mobile;
     private String email;
     private String token;
+    private boolean status;
+    private String avatar;
+    private String openId;
 }
